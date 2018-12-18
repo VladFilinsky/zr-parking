@@ -1,14 +1,12 @@
 @import "vars"
 @import "fonts"
 @import "libs"
-
+/* BASIC SETTINGS */
 ::placeholder
 	color: #666
-
 ::selection
 	background-color: $accent
 	color: #fff
-
 body
 	font-size: 16px
 	min-width: 320px
@@ -33,20 +31,16 @@ body
 	height: auto
 	&.img-width
 		width: 100%
-
 .text-center
 	text-align: center
-
 b, strong
 	font-weight: bold
-
-.italic
-	font-weight: italic
 .inverse
 	color: $dark-text
 	background-color: #fff
-.s-header, .s-safety, .s-video, .s-condition, .s-homes
+.s-header, .s-safety, .s-video, .s-condition,.s-callback, .s-homes, .s-exursion, .s-footer, .s-copyright
 	position: relative
+	overflow-x: hidden 
 .bg-section
 	background-position: center
 	background-size: cover
@@ -85,7 +79,6 @@ b, strong
 	padding: 10px 30px
 	&:hover
 		background-color: lighten($accent, 8%)
-/* Зеленая полоса*/
 .hr, .hr-blue
 		display: inline-block
 		width: 40px
@@ -97,7 +90,6 @@ b, strong
 	background-color: $btn
 	width: 27px
 	height: 5px
-
 .circle 
 	display: block
 	position: absolute
@@ -106,7 +98,29 @@ b, strong
 	background-color: $btn
 	background: linear-gradient(144deg, #461393 0%, #3276b0 45%, #c2dff6 100%)
 	box-shadow: 2px 2px 5px rgba(#000, .2)
-/* OVERLAY */
+.ball-1
+	width: 543px
+	height: 543px
+	position: absolute
+	top: 5%	
+	left: -350px
+	opacity: .50
+.ball-2
+	width: 233px
+	height: 233px
+	position: absolute
+	top: 20%	
+	left: 29%
+	opacity: .50
+	filter: blur(3px)
+.ball-3
+	width: 384px
+	height: 384px
+	position: absolute
+	top: 15%	
+	right: 0
+	opacity: .50
+	filter: blur(3px)
 .section-overlay
 	&::before
 		position: absolute
@@ -116,11 +130,23 @@ b, strong
 		width: 100%
 		height: 100%
 		background: rgba(#333, .65%)
+
  /* HEADER */
 .s-header
 	width: 100%
-	padding-top: 3%
-	padding-bottom: 15%
+	padding: 40px 0 200px
+	&::after
+		content: ''
+		display: block
+		position: absolute
+		width: 100%
+		height: 100%
+		max-height: 194px
+		bottom: 0
+		left: 0
+		background: url(../img/s-waves.png) center bottom -10px no-repeat
+		background-size: cover
+		z-index: 100 
 .headerTop, .footer
 	z-index: 100
 	position: relative
@@ -136,9 +162,11 @@ b, strong
 			img
 				z-index: 100
 		p
-			font-size: 8px
+			text-align: left
+			font-size: 7px
 			text-transform: uppercase
-			margin-left: 19%
+			margin: -10px 0 0 65px
+			white-space: nowrap
 	&-contacts, .callback-map
 		font-family: $opensans
 		font-size: 14px
@@ -150,7 +178,7 @@ b, strong
 			margin-bottom: 15px
 			&_icon
 				display: inline-block
-				width: 16px
+				width: 12px
 				margin-right: 7px
 				height: 100%
 				line-height: 1.3
@@ -230,16 +258,6 @@ b, strong
 .s-safety
 	overflow-x: hidden
 	background-color: #fff
-	&::before
-		content: ''
-		display: block
-		position: absolute
-		width: 100%
-		min-height: 194px
-		margin-top: -185px
-		background: url(../img/s-waves.png) center no-repeat
-		background-size: cover
-		z-index: 100
 .safety
 	&-title
 		text-align: center
@@ -252,10 +270,10 @@ b, strong
 			font-weight: bold
 .safety-wrapper
 	padding: 60px 0 80px
-	&_partition
-		padding: 15px 0
+	position: relative
 .safety-box
 	position: relative
+	z-index: 1
 	width: 100%
 	min-height: 354px
 	height: 100%
@@ -356,17 +374,6 @@ b, strong
 .s-condition
 	background-color: #fff
 	padding-top: 100px
-	&:before
-		content: ''
-		display: block
-		position: absolute
-		width: 100%
-		height: 25%
-		bottom: -24%
-		left: 0
-		background: url(../img/condition/topBg.png) center no-repeat
-		background-size: cover
-		z-index: 100
 	&_title
 		font-size: 30px
 		position: relative
@@ -438,37 +445,21 @@ b, strong
 			font-weight: 600
 		span
 			font-size: 18px
-
-.ball-1
-	width: 543px
-	height: 543px
-	position: absolute
-	top: 5%	
-	left: -350px
-	opacity: .50
-	z-index: 10
-.ball-2
-	width: 233px
-	height: 233px
-	position: absolute
-	top: 20%	
-	left: 29%
-	opacity: .50
-	z-index: 10
-	filter: blur(3px)
-.ball-3
-	width: 384px
-	height: 384px
-	position: absolute
-	top: 15%	
-	right: 0
-	opacity: .50
-	z-index: 10
-	filter: blur(3px)
 /* CONDITION END*/
 /* HOMES */
 .s-homes
 	padding: 120px 0 100px
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		width: 100%
+		height: 169px
+		top: 0
+		left: 0
+		background: url(../img/condition/topBg.png) center  top -10px no-repeat
+		background-size: cover
+		z-index: 100
 	&_title
 		font-size: 39px
 		font-weight: 200
@@ -531,7 +522,7 @@ b, strong
 		background: #333 url(../img/callback/bg-map.jpg) left -100px no-repeat
 		background-size: 180%
 		height: 100%
-		min-height: 450px
+		min-height: 350px
 	&_title
 		font-size: 14px
 		margin-bottom: 20px
@@ -569,20 +560,19 @@ b, strong
 		font-size: 12px
 		font-weight: 200
 .callback-main
+	width: 100%
 	&_title
 		font-size: 20px
 	&_text
 		font-size: 14px
 		font-weight: 200
-
-
 .form-callback, .form-excursion
 	&-input
 		outline: none
 		border: 1px solid #ebebeb
 		border-radius: 3px
 		padding: 9px 0 9px 15px
-		min-width: 260px
+		min-width: 200px
 		width: 100%
 		margin-right: 14px
 		color: #979797
@@ -604,7 +594,7 @@ b, strong
 		padding: 13px 35px
 		width: 100%
 /* CALLBACK END */
-/* Блок excursion*/
+/* EXCURSION */
 .s-excursion
 	position: relative
 	overflow-x: hidden
@@ -618,7 +608,7 @@ b, strong
 		text-align: center
 		margin-bottom: 20px
 	&-text
-		h2
+		&_title
 			font-size: 60px
 			font-weight: 200
 		p
@@ -674,7 +664,7 @@ b, strong
 	&-input
 		width: 100%
 		margin: 0 0 20px 0
-	.h4
+	&_title
 		font-weight: 400
 		line-height: 1.6
 		margin-bottom: 0
@@ -835,4 +825,13 @@ b, strong
   opacity: 1
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content 
   opacity: 0
+
+.video-popup 
+  position: relative
+  background: #FFF
+  padding: 20px
+  width: auto
+  max-width: 500px
+  margin: 20px auto
+
 @import "media" // Always at the end
