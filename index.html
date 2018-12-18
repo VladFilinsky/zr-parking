@@ -315,7 +315,7 @@
 	</section>
 	<!-- CALLBACK -->
 	<section class="s-callback">
-		<div class="container-fluid">
+		<div class="container-fluid no-padding">
 			<div class="row no-gutters">
 				<div class="col-12 col-md-6">
 					<div class="callback-map_wrapper">
@@ -364,7 +364,129 @@
 			</div><!-- row -->
 		</div><!-- container -->
 	</section>
+				<!-- excursion -->
+			<section class="s-excursion inverse">
+				<div class="excursion">
+					<div class="container">
+						<div class="row justify-content-md-between justify-content-center">
+							<div class="col-12 col-sm-10 col-md-6">
+								<div class="excursion-text">
+									<h2 class="h2"><strong>Недвижимость для бизнеса</strong><br>в «За ручьем»</h2>
+									<div class="hr"></div>
+									<p>Открой успешное дело<br> в проектах успешной компании</p>
+									<div class="excursion-text-socialicon">
+										<a href="#"><i class="fa fa-vk"></i></a>
+										<a href="#"><i class="fa fa-facebook"></i></a>
+										<a href="#"><i class="fa fa-youtube-play"></i></a>		
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+								<form class="form-excursion" action="mail/mail.php" method="POST">
+									<h4 class="h4 text-center"><strong>Запишитесь</strong><br> на экскурсию уже сейчас</h4>
+									<span><div class="hr"></div></span>
+									<input class="form-excursion-input" type="text" name="Имя" placeholder="Ваше имя" minlength="2" required="required">
+									<input class="form-excursion-input" type="tel" name="Телефон" required="required">
+									<p><input class="form-excursion-checkbox" type="checkbox" checked required="required">Даю согласие на <a class="form-personal" href="#">обработку персональных данных</a></p>
+									<button class="form-excursion-button button" type="submint">записаться</button>
+									<span class="form-excursion_text text-center">Наш менеджер свяжется с вами<br>в течении 15 минут</span>
+								</form>
+							</div>
+						</div>
+						<div class="excursion-circle circle excursion-circle_left"></div>
+						<div class="excursion-circle circle excursion-circle_right"></div>
+						<div class="excursion-circle circle excursion-circle_center"></div>
+					</div>
+				</div>
+			</section>
+			<!-- footer -->
+			<footer class="s-footer">
+				<div class="footer">
+					<div class="container">
+						<div class="row justify-content-center justify-content-sm-around text-center">
+							<div class="col-6 col-sm-7 col-md-3">
+								<div class="footer-logo">
+									<a href="#" class="footer-logo_img">
+										<img class="img-responsive" src="img/logo.png" alt="За Ручьем коммерческая недвижимость">
+									</a>
+									<p>КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ<br> ЖК “ЗА РУЧЬЕМ” Г. СУРГУТ</p>
+								</div>
+							</div>
+							<div class="col-8 col-sm-6 col-md-3">
+								<div class="footer-right">
+									<a class="footer-right-link" href="#">ПРАВОВАЯ ИНФОРМАЦИЯ</a>
+									<a class="footer-right-link" href="#">Проектная декларация</a>
+								</div>
+							</div>
+							<div class="col-10 col-sm-6 col-md-4 col-lg-3">
+								<div class="footer-contacts">
+									<div class="footer-contacts_box">
+										<span class="footer-contacts_box_icon">
+											<i class="fa fa-map-marker"></i>
+										</span>
+										<p class="footer-contacts_box_text">г. Сургут, ул. Университетская, 19</p>
+									</div>
+									<div class="footer-contacts_box">
+										<span class="footer-contacts_box_icon">
+											<i class="fa fa-clock-o"></i>
+										</span>
+										<p class="footer-contacts_box_text">Пн.-Пт.: 8:00 - 20:00<br>Сб.-Вс.:10:00 - 18:00</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-10 col-md-12 col-lg-3">
+								<div class="footer-tel">
+									<p>+7 (3462) <span>38-53-73</span></p>
+									<a class="button popup-with-form" data-effect="mfp-zoom-in" href="#form-popup">заказать звонок</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- copyright -->
+			<section class="s-copyright">
+				<div class="copyright">
+					<div class="container">
+						<div class="row justify-content-sm-between align-items-center justify-content-center">
+							<div class="col-sm-6 col-12">
+								<p class="copyright-text">© 2015-2018, ООО «СТХ-ИПОТЕКА»</p>
+							</div>
+								<div class="col-sm-6 col-12 copyright-sells">
+									<ul>
+										<li><span>Разработка и реклама<br>
+											<a class="copyright-link" target="_blank" href="https://sells.company/">компания Sells</a></span></li>
+									</ul>
 
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+
+
+
+	<!-- Скрытые элементы -->
+	<div id="form-popup" class="white-popup mfp-hide">
+		<form class="form-excursion white-popup-form" id="popup-excursion"action="#" method="POST">
+			<h4 class="h4 text-center"><strong>Заказать звонок</strong></h4>
+			<span><div class="hr"></div></span>
+			<input class="form-excursion-input" type="text" name="name" placeholder="Ваше имя" required="required" title="Введите Имя не менее ДВУХ букв">
+			<input class="form-excursion-input" type="tel" name="Телефон" required="required">
+			<p><input class="form-excursion-checkbox" type="checkbox" checked required="required">Даю согласие на <a class="form-personal" href="#">обработку персональных данных</a></p>
+			<button class="form-excursion-button button">заказать звонок</button>
+		</form>
+	</div>
+	<!-- Попап "спасибо" -->
+	<div class="overlay js-overlay-thank-you">
+		<div class="popup js-thank-you">
+			<i class="fa fa-paper-plane-o"></i>
+			<p>Ваше сообщение было отправлено.<br>В ближайшее время наш специалис свяжется с вами</p>
+			<div class="close-popup js-close-thank-you"></div>
+		</div>
+	</div>
+</div>
 	<script src="js/scripts.min.js"></script>
 
 </body>

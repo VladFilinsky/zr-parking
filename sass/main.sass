@@ -24,7 +24,9 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
-
+.no-padding
+	padding-left: 0 !important
+	padding-right: 0 !important
 .img-responsive
 	display: block
 	max-width: 100%
@@ -162,7 +164,8 @@ b, strong
 				line-height: 1.3
 	&-tel
 		text-align: center
-		padding: 10px 0 0 60px
+		max-width: 195px
+		margin: 10px 0 0 auto
 		p
 			font-size: 19px
 			white-space: nowrap
@@ -225,6 +228,7 @@ b, strong
 /* HEADER END*/
 /* SAFETY */
 .s-safety
+	overflow-x: hidden
 	background-color: #fff
 	&::before
 		content: ''
@@ -523,11 +527,11 @@ b, strong
 	left: 20%
 	top: 70px
 	&_wrapper
-		margin-left: -15px
 		position: relative
-		min-height: 500px
 		background: #333 url(../img/callback/bg-map.jpg) left -100px no-repeat
 		background-size: 180%
+		height: 100%
+		min-height: 450px
 	&_title
 		font-size: 14px
 		margin-bottom: 20px
@@ -554,8 +558,8 @@ b, strong
 	font-family: $opensans
 	background: linear-gradient(90deg, #3d4477 0%, #6d9dcb 50%, #454685 100%)
 	height: 100%
-	margin-right: -15px
-	padding-top: 70px
+	width: 100%
+	padding: 80px 0 90px
 .callback-form
 	&_manadger
 		width: 100%
@@ -572,7 +576,7 @@ b, strong
 		font-weight: 200
 
 
-.form-callback
+.form-callback, .form-excursion
 	&-input
 		outline: none
 		border: 1px solid #ebebeb
@@ -600,4 +604,235 @@ b, strong
 		padding: 13px 35px
 		width: 100%
 /* CALLBACK END */
+/* Блок excursion*/
+.s-excursion
+	position: relative
+	overflow-x: hidden
+	padding: 70px 0
+	background: url(../img/excursion/bottomBg.png) right bottom -100% no-repeat
+	background-size: 35%
+.excursion
+	span
+		display: block
+		width: 100%
+		text-align: center
+		margin-bottom: 20px
+	&-text
+		h2
+			font-size: 60px
+			font-weight: 200
+		p
+			margin-top: 20px
+			font-size: 24px
+			font-weight: 200
+		a
+			display: inline-block
+			width: 67px
+			height: 67px
+			margin-right: 10px
+			margin-top: 50px
+			background-color: #6089bf
+			border-radius: 50%
+			text-align: center
+			transition: all .25s ease
+			&:nth-child(2)
+				background-color: #3b5998
+			&:nth-child(3)
+				background-color: #cd191e
+			&:hover
+				transform: scale(.9)
+			.fa
+				line-height: 67px
+				font-size: 28px
+				color: #fff
+	&-circle
+		z-index: -1
+		filter: blur(4px)
+		opacity: .5
+		&_left
+			width: 220px
+			height: 220px
+			bottom: 10%
+			left: 12%
+		&_right
+			width: 160px
+			height: 160px
+			top: 45%
+			left: 55%
+		&_center
+			width: 300px
+			height: 300px
+			top: 20%
+			right: -190px
+.form-excursion, .white-popup-message
+	font-family: $opensans
+	padding: 10%
+	padding-bottom: 15%
+	background-color: $form
+	background: $form url(../img/excursion/formBg.png) center bottom -20px no-repeat
+	background-size: 100%
+	&-input
+		width: 100%
+		margin: 0 0 20px 0
+	.h4
+		font-weight: 400
+		line-height: 1.6
+		margin-bottom: 0
+		font-size: 18px
+		margin: 0 -10px
+	a 
+		border-bottom: 1px dashed #333
+		color: #333
+	p
+		margin-top: 0
+		font-size: 10px
+	&_text
+		margin-top: 20px
+		display: inline-block
+		font-size: 12px
+	&-button
+		width: 100%
+		font-size: 18px
+  
+/* Блок footer*/
+.s-footer
+	position: relative
+	background-color: $footer
+	padding: 30px 0 10px 0
+.footer
+	&-logo
+		p
+			font-size: 6px
+			width: 100%
+	&-right
+		padding-top: 12px
+.footer-right-link, .copyright-link
+	font-size: 12px
+	color: rgba(#fff, .35)
+	border-bottom: 1px dashed rgba(#fff, .35)
+	white-space: nowrap
+	text-decoration: none
+	text-transform: uppercase
+	transition: background-color .3s ease
+	margin-top: 12px
+	&:hover
+		color: rgba(#fff, .55)
+		border-bottom: 1px dashed rgba(#fff, .55)
+
+/* Блок copyright*/
+.s-copyright
+	background-color: #2b2c33
+	padding: 1.5%
+.copyright
+	font-family: $opensans
+	font-size: 12px
+	color: rgba(#fff, .45)
+	height: 100%
+	&-text
+		text-transform: uppercase
+	&-link
+		text-transform: none
+		border-bottom: 1px solid rgba(#fff, .45)
+		&:hover
+			color: rgba(#fff, .55)
+			border-bottom: 1px solid rgba(#fff, .55)
+	&-sells
+		text-align: right
+	ul
+		list-style-type: none
+		display: inline-block
+		width: 180px
+		height: 45px
+		margin: 0
+		padding: 0
+		li
+			position: relative
+			width: 100%
+			height: 100%
+			span
+				display: block
+				text-align: right
+				line-height: 1.4
+				position: absolute
+				top: 0
+				right: 45px	
+			&::after
+				content: ''
+				display: block
+				position: absolute
+				width: 35px
+				height: 35px
+				background: url(../img/sells.png) center no-repeat
+				background-size: 100%
+				top: 0
+				right: 0		
+
+
+/* Модальное окно с формой*/
+.white-popup 
+  position: relative
+  width: auto
+  max-width: 350px
+  margin: 20px auto
+  color: #333
+  &-form
+  	text-align: center
+  	border-radius: 3px
+  	.hr
+  		height: 6px
+  		width: 35px
+  		margin: 10px 0
+  	input
+  		&:nth-child(3)
+  			margin-top: 10px
+  	button
+  		margin-bottom: 5%
+
+/* Модальное окно "спасибо" */
+.overlay 
+	position: absolute
+	width: 100%
+	height: 100vh
+	top: 0
+	left: 0
+	background-color: rgba(0, 0, 0, .5)
+	display: none
+.popup
+	position: relative
+	margin: 0 auto
+	color: #333
+	max-width: 420px
+	padding: 30px 20px 50px 15px
+	border-radius: 3px
+	background:$form url(../img/excursion/formBg.png) left bottom -30px no-repeat
+	background-size: 100%
+	&-box
+		min-height: 85px
+		.fa
+  		font-size: 80px
+  		font-weight: bold
+  		color: #1eb6c1
+  		float: left
+  		margin: -10px 10px 0 0
+		p
+  		font-size: 14px
+  		font-weight: 400
+  		line-height: 1.4
+/* Стили для модального окна с формой*/
+.mfp-bg 
+	background: #393f4f
+.mfp-fade.mfp-bg 
+  opacity: 0
+  transition: all 0.15s ease-out
+.mfp-fade.mfp-bg.mfp-ready 
+  opacity: 0.8
+.mfp-fade.mfp-bg.mfp-removing 
+	opacity: 0
+.mfp-fade.mfp-wrap .mfp-content 
+  opacity: 0
+  transition: all 0.15s ease-out
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content 
+  opacity: 1
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content 
+  opacity: 0
 @import "media" // Always at the end
