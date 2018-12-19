@@ -7,6 +7,13 @@
 ::selection
 	background-color: $accent
 	color: #fff
+button:focus
+	outline: none
+button::-moz-focus-inner
+	border: 0
+a, a:visited, a:focus, a:active, a:hover
+	outline: 0 none !important
+	text-decoration: none !important
 body
 	font-size: 16px
 	min-width: 320px
@@ -683,8 +690,8 @@ b, strong
 	&-button
 		width: 100%
 		font-size: 18px
-  
-/* Блок footer*/
+/* EXCURSION END */
+/* FOOTER */
 .s-footer
 	position: relative
 	background-color: $footer
@@ -708,8 +715,8 @@ b, strong
 	&:hover
 		color: rgba(#fff, .55)
 		border-bottom: 1px dashed rgba(#fff, .55)
-
-/* Блок copyright*/
+/* FOOTER END */
+/* COPYRIGHT */
 .s-copyright
 	background-color: #2b2c33
 	padding: 1.5%
@@ -756,14 +763,13 @@ b, strong
 				background-size: 100%
 				top: 0
 				right: 0		
-
-
-/* Модальное окно с формой*/
+/* COPYRIGHT END */
+/* MODAL "FORM-CALLBACK" */
 .white-popup 
   position: relative
   width: auto
   max-width: 350px
-  margin: 20px auto
+  margin: 100px auto
   color: #333
   &-form
   	text-align: center
@@ -778,60 +784,65 @@ b, strong
   	button
   		margin-bottom: 5%
 
-/* Модальное окно "спасибо" */
+/* MODAL "THANKS" */
 .overlay 
 	position: absolute
+	z-index: 1000
 	width: 100%
 	height: 100vh
 	top: 0
 	left: 0
 	background-color: rgba(0, 0, 0, .5)
-	display: none
+	display: block
 .popup
 	position: relative
-	margin: 0 auto
+	margin: 30vh auto
 	color: #333
 	max-width: 420px
-	padding: 30px 20px 50px 15px
+	min-height: 180px
+	padding: 40px 20px 50px 15px
 	border-radius: 3px
-	background:$form url(../img/excursion/formBg.png) left bottom -30px no-repeat
+	background: $form url(../img/excursion/formBg.png) left bottom -30px no-repeat
 	background-size: 100%
-	&-box
-		min-height: 85px
-		.fa
-  		font-size: 80px
-  		font-weight: bold
-  		color: #1eb6c1
-  		float: left
-  		margin: -10px 10px 0 0
-		p
-  		font-size: 14px
-  		font-weight: 400
-  		line-height: 1.4
-/* Стили для модального окна с формой*/
-.mfp-bg 
-	background: #393f4f
-.mfp-fade.mfp-bg 
-  opacity: 0
-  transition: all 0.15s ease-out
-.mfp-fade.mfp-bg.mfp-ready 
-  opacity: 0.8
-.mfp-fade.mfp-bg.mfp-removing 
+	.fa
+  	font-size: 80px
+  	font-weight: bold
+  	color: #1eb6c1
+  	float: left
+  	margin: -10px 10px 0 0
+	p
+  	font-size: 14px
+  	font-weight: 400
+  	line-height: 1.4
+	&-close
+  	display: inline-block
+  	position: absolute
+  	top: -5px
+  	right: 10px
+  	transform: rotate(45deg)
+  	font-size: 26px
+  	cursor: pointer
+  	&:hover
+  		opacity: .8
+/* ANIMATION MODAL "FORM_CALLBACK" */
+.mfp-3d-unfold .mfp-content 
+	perspective: 2000px
+.mfp-3d-unfold .mfp-with-anim
 	opacity: 0
-.mfp-fade.mfp-wrap .mfp-content 
-  opacity: 0
-  transition: all 0.15s ease-out
-.mfp-fade.mfp-wrap.mfp-ready .mfp-content 
-  opacity: 1
-.mfp-fade.mfp-wrap.mfp-removing .mfp-content 
-  opacity: 0
-
-.video-popup 
-  position: relative
-  background: #FFF
-  padding: 20px
-  width: auto
-  max-width: 500px
-  margin: 20px auto
-
+	transition: all 0.3s ease-in-out
+	transform-style: preserve-3d
+	transform: rotateY(-60deg)
+.mfp-3d-unfold.mfp-bg 
+	opacity: 0
+	transition: all 0.5s
+.mfp-3d-unfold.mfp-ready .mfp-with-anim 
+	opacity: 1
+	transform: rotateY(0deg)
+.mfp-3d-unfold.mfp-ready.mfp-bg 
+	opacity: 0.8
+.mfp-3d-unfold.mfp-removing .mfp-with-anim 
+	transform: rotateY(60deg)
+	opacity: 0
+.mfp-3d-unfold.mfp-removing.mfp-bg 
+	opacity: 0
 @import "media" // Always at the end
